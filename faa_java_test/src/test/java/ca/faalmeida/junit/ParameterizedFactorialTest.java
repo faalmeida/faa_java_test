@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -12,10 +13,24 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class ParameterizedFactorialTest {
+	
+	private int number;
+	private int expectedResult;
 
-	@Test
+	public ParameterizedFactorialTest(int input, int expected) {
+		number = input;
+		expectedResult = expected;
+	}
+	
+	@Ignore @Test
 	public void test() {
 		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void factorial() throws Exception {
+		Factorial fact = new Factorial();
+		assertEquals(fact.factorial(number), expectedResult);
 	}
 	
 	@Parameters
